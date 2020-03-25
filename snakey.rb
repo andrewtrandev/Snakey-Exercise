@@ -16,6 +16,31 @@
 # E.g. is_it_a_snake("Sometimes, I just love saying words with an 's' in them"), 
 # should return false, as sometimes has 2 s's, but they are not next to each other
 
-def is_it_a_snake(str)
 
+#need to take in a string and check if there are two ss right next to each other
+#can't use unique?
+
+def is_it_a_snake(str)
+    scheck=str.downcase.split("")
+    index=0
+    p scheck
+    while index<scheck.length
+        if scheck[index] == "s" && scheck[index+1] == "s"
+            return true
+        end
+        index+=1
+    end
+    return false 
 end
+
+
+p is_it_a_snake("Ssay what?! I'n no snake")
+# should return true, as 'Ssay' had 2 or more s's in a row
+
+p is_it_a_snake("Something sseems a little ssuspect") 
+# #should return true, as 'sseems' and 'ssuspect' had 2 or more s's in a row
+
+p is_it_a_snake("Hello there Samantha")# should return false
+
+p is_it_a_snake("Sometimes, I just love saying words with an 's' in them")
+# # should return false, as sometimes has 2 s's, but they are not next to each other
